@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  mar:
+    container_name: mar
+    build: 
+      dockerfile: Dockerfile
+      context: ./
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - 4300:4200
+    environment:
+      NODE_ENV: production
+    command: /usr/src/app/entrypoint.sh
